@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/_16dp"
+    tools:context=".ui.MainActivity">
+
+    <TextView
+        android:id="@+id/tvLabelTotalAmount"
+        style="@style/TextView16"
+        android:layout_width="wrap_content"
+        android:text="@string/total_amount_equal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTotalAmount"
+        style="@style/TextView16"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="@dimen/_8dp"
+        android:text="@string/total_amount"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvLabelTotalAmount"
+        app:layout_constraintStart_toEndOf="@+id/tvLabelTotalAmount" />
+
+    <TextView
+        android:id="@+id/tvLabelPayments"
+        style="@style/TextView16"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/_10dp"
+        android:text="@string/payments"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLabelTotalAmount" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPayments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvLabelPayments"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_payment_chip" />
+
+    <TextView
+        android:id="@+id/tvAddPayment"
+        style="@style/TextView16"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/_10dp"
+        android:text="@string/add_payment"
+        android:textColor="@color/link_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvPayments" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSave"
+        style="@style/AppButton"
+        android:layout_marginTop="@dimen/_24dp"
+        android:text="@string/save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddPayment"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
